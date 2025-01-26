@@ -1,4 +1,4 @@
-from handlers.manager import Manager
+from scheduled_task_executor import ScheduledTaskExecutor
 if __name__ == '__main__':
-    manager = Manager()
-    manager.run()
+    scheduled_task_executor = ScheduledTaskExecutor()
+    scheduled_task_executor.run()

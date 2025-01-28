@@ -1,5 +1,12 @@
+# Diretórios virtuais do Python
 .venv/
+
+# Arquivos temporários de upload e download de arquivos
 .tmp.driveupload/
 .tmp.drivedownload/
-*.bat
-__pycache__/
+
+# Arquivos executáveis e temporários do Windows e outras plataformas
+*.bat               # Scripts de lote (Batch) específicos de plataforma, geralmente não versionados
+
+# Arquivos binários e de compilação do Python
+__pycache__/        # Arquivos de cache de bytecode do Python

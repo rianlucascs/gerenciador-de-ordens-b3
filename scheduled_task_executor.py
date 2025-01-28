@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, date
 start_time = datetime.now().strftime('%H:%M') + ':00'
 from pandas import Timestamp
+from bat_file_manager import BatFileManager
 
 TEST_ALL_DAYS = True
 TEST_SCRIPT_UPDATE = False
@@ -29,10 +30,12 @@ class ScheduledTaskExecutor:
                 pass
 
             if start_time == self.market_open or TEST_MARKET_OPEN:
-                pass
+                BatFileManager("A", "open").run()
+                BatFileManager("B", "open").run()
 
             if start_time == self.market_close or TEST_MARKET_CLOSE:
-                pass
+                BatFileManager("A", "close").run()
+                BatFileManager("B", "close").run()
             
             if start_time == self.script_close or TEST_SCRIPT_CLOSE:
                 pass

@@ -1,4 +1,5 @@
 .venv/
 .tmp.driveupload/
-run.bat
+.tmp.drivedownload/
+*.bat
 __pycache__/

@@ -1,5 +1,6 @@
 from os.path import exists, join, dirname, abspath
 import subprocess
+from log_config import setup_logging
 
 class BatFileManager:
 
@@ -38,6 +39,9 @@ class BatFileManager:
         self.path = join(dirname(abspath(__file__)), "strategies", strategie)
         self.bat_file_path = join(self.path, f"{file}.bat")
 
+        self.logger = setup_logging()
+
+
     def create_bat_file(self) -> None:
         """
         Cria o arquivo .bat caso ele não exista.
@@ -54,9 +58,9 @@ class BatFileManager:
                 with open(self.bat_file_path, 'w', encoding="utf-8") as f:
                     bat_content  = self._generate_bat_content()
                     f.write(bat_content)
-                print(f"Arquivo .bat criado com sucesso: {self.bat_file_path}")
+                self.logger.info(f"Arquivo .bat criado com sucesso: {self.bat_file_path}")
             except OSError as e:
-                print(f"Erro ao criar o arquivo .bat: {e}")
+                self.logger.error(f"Erro ao criar o arquivo .bat: {e}")
                 raise
 
     def _generate_bat_content(self) -> str:
@@ -110,16 +114,16 @@ echo Execução concluída com sucesso.
         """
         try:
             if not exists(self.bat_file_path):
-                print(f"Erro: O arquivo {self.file}.bat não foi encontrado no diretório {self.path}.")
+                self.logger.error(f"Erro: O arquivo {self.file}.bat não foi encontrado no diretório {self.path}.")
                 return
-            print(f"Iniciando a execução do script {self.file}.bat...")
+            self.logger.info(f"Iniciando a execução do script {self.file}.bat da estratégia {self.strategie}.")
             subprocess.Popen(
                 ["cmd.exe", "/c", self.bat_file_path],
                 creationflags=subprocess.CREATE_NEW_CONSOLE 
             )
-            print("Execução iniciada com sucesso!")
+            self.logger.info(f"Execução do script {self.file} da estratégia {self.strategie} iniciada com sucesso!")
         except Exception as e:
-            print(f"Erro ao executar o script: {e}")
+            self.logger.error(f"Erro ao executar o script {self.file} da estratégia {self.strategie}: {e}")
 
     def run(self) -> None:
         self.create_bat_file()

@@ -129,9 +129,9 @@ echo Execução concluída com sucesso.
         self.create_bat_file()
         self.execute_bat_file()
 
-if __name__ == "__main__":
-    bat_file_manager = BatFileManager("A", "open")
-    bat_file_manager.run()
+# if __name__ == "__main__":
+#     bat_file_manager = BatFileManager("A", "open")
+#     bat_file_manager.run()
 
 
 

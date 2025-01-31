@@ -15,6 +15,5 @@ open.bat
 close.bat
 after.bat
 
-# Test
-teste1.bat
-teste2.bat
+# Arquivo de commit automático 
+auto_commit.sh

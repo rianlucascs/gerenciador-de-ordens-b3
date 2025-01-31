@@ -38,6 +38,7 @@ class BatFileManager:
         self.strategie = strategie
         self.path = join(dirname(abspath(__file__)), "strategies", strategie)
         self.bat_file_path = join(self.path, f"{file}.bat")
+        self.bash_file_path = join(dirname(abspath(__file__)), "auto_commit.sh")
 
         self.logger = setup_logging()
 
@@ -121,13 +122,21 @@ echo Execução concluída com sucesso.
                 ["cmd.exe", "/c", self.bat_file_path],
                 creationflags=subprocess.CREATE_NEW_CONSOLE 
             )
+            # commit automatizado
+            if exists(self.bash_file_path):
+                subprocess.Popen(
+                    ["wsl", self.bash_file_path],
+                    creationflags=subprocess.CREATE_NEW_CONSOLE
+                )
             self.logger.info(f"Execução do script {self.file} da estratégia {self.strategie} iniciada com sucesso!")
         except Exception as e:
             self.logger.error(f"Erro ao executar o script {self.file} da estratégia {self.strategie}: {e}")
 
+
     def run(self) -> None:
         self.create_bat_file()
         self.execute_bat_file()
+
 
 
 

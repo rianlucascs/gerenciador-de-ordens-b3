@@ -1,6 +1,4 @@
-<img src="https://dougwils.com/wp-content/uploads/2024/12/Octogif.gif" style="width: 600px; height: 250px; object-fit: cover;">
-
-<!-- <img src="https://i.gifer.com/EGU.gif" style="width: 600px; height: 250px; object-fit: cover;"> -->
+![polvo](https://i.gifer.com/EGU.gif)
 
 # GERENCIAMENTO DE ORDENS B3
 

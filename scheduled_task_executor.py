@@ -56,7 +56,9 @@ class ScheduledTaskExecutor:
                 self.task_closure()
     
     def task_update(self):
-        pass
+        BatFileManager("A", "update").run()
+        BatFileManager("B", "update").run()
+        BatFileManager.execute_bash_file_auto_commit()
 
     def task_open(self):
         BatFileManager("A", "open").run()
@@ -69,5 +71,6 @@ class ScheduledTaskExecutor:
         BatFileManager.execute_bash_file_auto_commit()
 
     def task_closure(self):
-        
+        BatFileManager("A", "clousure").run()
+        BatFileManager("B", "clousure").run()
         BatFileManager.execute_bash_file_auto_commit()

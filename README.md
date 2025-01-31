@@ -1,9 +1,10 @@
-![coin-flip-24](https://i.gifer.com/EGU.gif)
+<img src="https://dougwils.com/wp-content/uploads/2024/12/Octogif.gif" style="width: 600px; height: 250px; object-fit: cover;">
+
+<!-- <img src="https://i.gifer.com/EGU.gif" style="width: 600px; height: 250px; object-fit: cover;"> -->
 
 # GERENCIAMENTO DE ORDENS B3
 
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white&color=3776ab&style=flat-square) ![MetaTrader 5](https://www.icmcapital.com/assets/images/mt5-logo-mob.png)
-
 
 Este projeto tem como objetivo automatizar o envio de ordens com base nas estratégias desenvolvidas no repositório predicao-dados-binarios, aplicando-as na conta `DMO` do `MetaTrader5`. Além disso, ele verifica em tempo real se os resultados obtidos na execução das estratégias coincidem com os resultados do backtest.
 

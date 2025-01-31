@@ -17,3 +17,6 @@ after.bat
 
 # Arquivo de commit automático 
 auto_commit.sh
+
+# Chaves de acessos, paths
+config_secrets.py

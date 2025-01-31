@@ -61,3 +61,6 @@ Este projeto tem como objetivo automatizar o envio de ordens com base nas estrat
     ```bash
     schtasks /create /tn "TAREFA CLOSURE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 17:30
     ``` 
+
+## Observações
+1. auto_commit não esta disponível.

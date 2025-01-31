@@ -1,6 +1,7 @@
 from os.path import exists, join, dirname, abspath
 import subprocess
 from log_config import setup_logging
+import config_secrets
 
 class BatFileManager:
 
@@ -125,7 +126,10 @@ echo Execução concluída com sucesso.
             # commit automatizado
             if exists(self.bash_file_path):
                 subprocess.Popen(
-                    ["wsl", self.bash_file_path],
+                    [
+                        config_secrets.PATH_GIT_BASH_EXE, # <---!! 
+                        self.bash_file_path
+                        ],
                     creationflags=subprocess.CREATE_NEW_CONSOLE
                 )
             self.logger.info(f"Execução do script {self.file} da estratégia {self.strategie} iniciada com sucesso!")

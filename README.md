@@ -1,4 +1,4 @@
-![polvo](https://i.gifer.com/EGU.gif)
+<!-- ![polvo](https://i.gifer.com/EGU.gif) -->
 
 # GERENCIAMENTO DE ORDENS B3
 

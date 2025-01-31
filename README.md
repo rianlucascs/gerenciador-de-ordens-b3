@@ -16,7 +16,7 @@
     ```bash
     pip install -r requirements.txt
 
-4. Criação do arquivo .bat dentro da pasta GERENCIAMENTO-ORDENS-B3:
+4. Criação do arquivo de execução principal:
     - Abra o Bloco de Notas ou seu editor de texto favorito.
     - Copie e cole o seguinte código no arquivo de texto:
     ```bash
@@ -34,13 +34,22 @@
     - Salve o arquivo com a extensão `.bat`. Exemplo: `run.bat`.
 
 5. Agende a execução do script para ser executado diariamente
+    
+    - Copie e cole essa instrução no `CMD`
+    - Substitua o caminho do diretório (C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat)
+
     ```bash
-    # É necessário editar o PATH para o arquivo run.bat que está na pasta GERENCIAMENTO-ORDENS-B3
+    schtasks /create /tn "TAREFA UPDATE AM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:30
+    ```
 
-    schtasks /create /tn "A1_UPDATE" /tr "X:\Caminho\Para\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:30
+    ```bash
+    schtasks /create /tn "TAREFA OPEN AM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:50
+    ```
 
+    ```bash
+    schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 16:35
+    ```
 
-
-
-
-
+    ```bash
+    schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 17:30
+    ``` 

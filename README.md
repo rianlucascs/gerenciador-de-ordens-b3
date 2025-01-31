@@ -2,6 +2,8 @@
 
 # GERENCIAMENTO DE ORDENS B3
 
+![Python 3.10](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white&color=3776ab&style=flat-square)
+
 ## Como usar
 
 1. Clone o repositório:
@@ -53,7 +55,7 @@
     schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 16:35
     ```
 
-    **Fechamento**
+    **Finalização**
     ```bash
-    schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 17:30
+    schtasks /create /tn "TAREFA CLOSURE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 17:30
     ``` 

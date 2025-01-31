@@ -38,18 +38,22 @@
     - Copie e cole essa instrução no `CMD`
     - Substitua o caminho do diretório (C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat)
 
+    **Atualização**
     ```bash
     schtasks /create /tn "TAREFA UPDATE AM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:30
     ```
 
+    **Abertura**
     ```bash
     schtasks /create /tn "TAREFA OPEN AM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:50
     ```
 
+    **Fechamento**
     ```bash
     schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 16:35
     ```
 
+    **Fechamento**
     ```bash
     schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 17:30
     ``` 

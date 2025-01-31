@@ -68,6 +68,3 @@ class ScheduledTaskExecutor:
 
     def task_closure(self):
         pass
-
-
-ScheduledTaskExecutor().run()

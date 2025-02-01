@@ -3,6 +3,7 @@ current_time = datetime.now().strftime('%H:%M:%S')
 from bat_file_manager import BatFileManager
 from log_config import setup_logging
 from auto_commit import auto_commit
+from network_manager import network_manager
 
 # Definindo horários fixos
 SCRIPT_UPDATE_TIME = "07:50:00"
@@ -57,21 +58,27 @@ class ScheduledTaskExecutor:
                 self.task_closure()
     
     def task_update(self):
+        network_manager()
         BatFileManager("A", "update").run()
         BatFileManager("B", "update").run()
         auto_commit()
 
     def task_open(self):
+        network_manager()
         BatFileManager("A", "open").run()
         BatFileManager("B", "open").run()
         auto_commit()
+        
 
     def task_close(self):
+        network_manager()
         BatFileManager("A", "close").run()
         BatFileManager("B", "close").run()
         auto_commit()
+        
 
     def task_closure(self):
+        network_manager()
         BatFileManager("A", "clousure").run()
         BatFileManager("B", "clousure").run()
         auto_commit()

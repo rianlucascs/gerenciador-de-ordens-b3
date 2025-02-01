@@ -1,0 +1,3 @@
+PATH_GIT_BASH_EXE = r"C:\caminho..."
+
+NETWORK_NAME = "WIFI NAME"

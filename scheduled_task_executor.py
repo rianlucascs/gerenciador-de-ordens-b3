@@ -4,6 +4,7 @@ from bat_file_manager import BatFileManager
 from log_config import setup_logging
 from auto_commit import auto_commit
 from network_manager import network_manager
+from suspend_computer import suspend_computer
 
 # Definindo horários fixos
 SCRIPT_UPDATE_TIME = "07:50:00"
@@ -33,7 +34,7 @@ class ScheduledTaskExecutor:
     def should_run_task(self, task_time: str, test_flag: bool) -> bool:
         return current_time == task_time or test_flag
     
-    def run(self):
+    def run(self) -> None:
 
         current_day = self.get_day_of_week()
 
@@ -57,28 +58,28 @@ class ScheduledTaskExecutor:
                 self.logger.info("Finalizando script.")
                 self.task_closure()
     
-    def task_update(self):
+    def task_update(self) -> None:
         network_manager()
         BatFileManager("A", "update").run()
         BatFileManager("B", "update").run()
         auto_commit()
 
-    def task_open(self):
+    def task_open(self) -> None:
         network_manager()
         BatFileManager("A", "open").run()
         BatFileManager("B", "open").run()
         auto_commit()
         
-
-    def task_close(self):
+    def task_close(self) -> None:
         network_manager()
         BatFileManager("A", "close").run()
         BatFileManager("B", "close").run()
         auto_commit()
-        
 
-    def task_closure(self):
+    def task_closure(self) -> None:
         network_manager()
         BatFileManager("A", "clousure").run()
         BatFileManager("B", "clousure").run()
         auto_commit()
+        
+        suspend_computer()

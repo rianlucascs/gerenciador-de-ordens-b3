@@ -5,6 +5,7 @@ from log_config import setup_logging
 from auto_commit import auto_commit
 from network_manager import network_manager
 from suspend_computer import suspend_computer
+from inbox_manager import InboxManager
 
 # Definindo horários fixos
 SCRIPT_UPDATE_TIME = "07:50:00"
@@ -81,5 +82,6 @@ class ScheduledTaskExecutor:
         BatFileManager("A", "clousure").run()
         BatFileManager("B", "clousure").run()
         auto_commit()
+        InboxManager().to_send()
         
         suspend_computer()

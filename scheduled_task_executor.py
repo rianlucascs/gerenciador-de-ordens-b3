@@ -8,10 +8,10 @@ from suspend_computer import suspend_computer
 from inbox_manager import InboxManager
 
 # Definindo horários fixos
-SCRIPT_UPDATE_TIME = "07:50:00"
-MARKET_OPEN_TIME = "10:00:00"
+SCRIPT_UPDATE_TIME = "08:30:00"
+MARKET_OPEN_TIME = "08:50:00"
 MARKET_CLOSE_TIME = "16:35:00"
-SCRIPT_CLOSURE_TIME = "18:00:00"
+SCRIPT_CLOSURE_TIME = "17:30:00"
 
 # Flags de teste
 TEST_ALL_DAYS = False
@@ -82,6 +82,7 @@ class ScheduledTaskExecutor:
         BatFileManager("A", "clousure").run()
         BatFileManager("B", "clousure").run()
         auto_commit()
-        InboxManager().to_send()
         
-        suspend_computer()
+        # InboxManager().to_send()
+        
+        # suspend_computer()

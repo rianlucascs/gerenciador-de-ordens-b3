@@ -1,4 +1,4 @@
-import socket
+from socket import create_connection
 import subprocess
 import config_secrets 
 from log_config import setup_logging
@@ -7,13 +7,31 @@ from time import sleep
 logger = setup_logging()
 
 def is_connection_active() -> bool:
+    """
+    Verifica se há uma conexão ativa com a Internet.
+
+    Esta função tenta criar uma conexão de socket com o servidor DNS público do Google (8.8.8.8) na porta 53,
+    que é a porta padrão para consultas DNS. Se a conexão for bem-sucedida dentro do tempo limite de 5 segundos, 
+    a função retorna `True`, indicando que há uma conexão ativa com a Internet. Caso contrário, retorna `False`.
+
+    :return: `True` se a conexão com a Internet estiver ativa, `False` caso contrário.
+    """
     try:
-        socket.create_connection(("8.8.8.8", 53), timeout=5)
+        create_connection(("8.8.8.8", 53), timeout=5)
         return True
     except OSError:
         return False
 
 def wifi_connect() -> None:
+    """
+    Conecta o computador à rede Wi-Fi especificada no arquivo de configuração.
+
+    Esta função executa o comando `netsh wlan connect` no sistema Windows para estabelecer a conexão 
+    com a rede Wi-Fi definida em `config_secrets.NETWORK_NAME`.
+
+    Certifique-se de que o nome da rede no arquivo `config_secrets` esteja correto e que o computador 
+    tenha permissão para executar o comando no ambiente.
+    """
     subprocess.run(f'netsh wlan connect name="{config_secrets.NETWORK_NAME}"', 
                             shell=True)
     return None
@@ -45,10 +63,20 @@ def attempt_connection(max_retries=10, sleep_time=60):
 
 def network_manager() -> None:
     """
-    Gerencia a reconexão com a internet.
+    Gerencia o processo de reconexão com a Internet.
+
+    Esta função coordena o processo de tentativa de reconexão à Internet, 
+    chamando a função `attempt_connection` e gerenciando as tentativas de 
+    conexão até o número máximo configurado. Ela também registra o sucesso ou 
+    falha de cada tentativa, e, em caso de erro inesperado, loga a exceção.
+
+    O número máximo de tentativas e o tempo de espera entre elas são configurados 
+    dentro da função. Se a conexão for bem-sucedida, uma mensagem de sucesso é registrada, 
+    caso contrário, é registrado um erro informando a falha. Em caso de erro não tratado, 
+    a exceção é capturada e registrada.
     """
-    max_retries = 5  # Número máximo de tentativas
-    sleep_time = 60  # Tempo de espera entre as tentativas
+    max_retries = 3  # Número máximo de tentativas
+    sleep_time = 30  # Tempo de espera entre as tentativas
 
     try:
         # Tenta conectar à internet

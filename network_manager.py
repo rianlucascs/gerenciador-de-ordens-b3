@@ -62,3 +62,5 @@ def network_manager() -> None:
         logger.exception(f"Ocorreu um erro inesperado: {e}")
 
     return None
+
+

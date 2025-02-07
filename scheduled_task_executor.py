@@ -1,5 +1,5 @@
 from datetime import datetime
-current_time = datetime.now().strftime('%H:%M:%S')
+current_time = datetime.now().strftime('%H:%M') + ":00"
 from bat_file_manager import BatFileManager
 from log_config import setup_logging
 from auto_commit import auto_commit
@@ -83,6 +83,8 @@ class ScheduledTaskExecutor:
         BatFileManager("B", "clousure").run()
         auto_commit()
         
-        # InboxManager().to_send()
+        InboxManager("A").to_send()
+        InboxManager("B").to_send()
         
         # suspend_computer()
+

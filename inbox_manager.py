@@ -3,15 +3,20 @@ import smtplib
 from email.message import EmailMessage
 import config_secrets
 import os
+from os.path import exists
 
 from datetime import date
 
 class InboxManager:
 
-    def __init__(self):
-        
+    def __init__(self, file):
         self.server = None
 
+        self.file = file
+
+        self.path_html = os.path.join(os.path.dirname(os.path.abspath(__file__)), 
+                         "strategies", file, "inbox_content.html")
+        
     def _conectar_servidor(self):
         try:
             self.server = smtplib.SMTP('smtp.gmail.com', 587)  
@@ -22,13 +27,11 @@ class InboxManager:
             print(f"Erro ao conectar ao servidor de e-mail: {e}")
 
     def _html_content(self):
-        with open(
-            os.path.join(os.path.dirname(os.path.abspath(__file__)), "inbox_content.html"),
-                  "r", encoding="utf-8") as html:
-            return html.read()
-
-    def _subject(self):
-        return f"Relatório de Resultados - {date.today()}"
+        if exists(self.path_html):
+            with open(self.path_html, "r", encoding="utf-8") as html:
+                return html.read()
+        else:
+            pass
 
     def to_send(self):
         if self.server is None:
@@ -39,7 +42,7 @@ class InboxManager:
             msg.set_content("Este é um e-mail em HTML. Se você não consegue visualizar o HTML, veja abaixo.")  # Texto para clientes de e-mail que não suportam HTML
             msg.add_alternative(self._html_content(), subtype='html')
             
-            msg['Subject'] = self._subject()
+            msg['Subject'] = f"Relatório de Resultados - Estratégia {self.file} - {date.today()}"
             msg['From'] = config_secrets.FROM
             msg['To'] = config_secrets.TO
             
@@ -51,3 +54,5 @@ class InboxManager:
             self.server.quit() 
 
 
+if __name__ == "__main__":
+    InboxManager("A").to_send()

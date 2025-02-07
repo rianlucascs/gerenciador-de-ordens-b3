@@ -1,4 +1,11 @@
-2025-02-04 08:30:03,155 - INFO - Executando tarefas agendadas para o dia: Terça-feira
-2025-02-04 08:50:02,186 - INFO - Executando tarefas agendadas para o dia: Terça-feira
-2025-02-04 16:35:02,229 - INFO - Executando tarefas agendadas para o dia: Terça-feira
-2025-02-04 17:30:02,193 - INFO - Executando tarefas agendadas para o dia: Terça-feira
+2025-02-07 08:30:00,808 - INFO - Executando tarefas agendadas para o dia: Sexta-feira
+2025-02-07 08:30:00,808 - INFO - Iniciando atualização do script.
+2025-02-07 08:30:00,808 - INFO - Tentativa 1/5 de conectar à internet...
+2025-02-07 08:30:00,855 - INFO - Internet conectada com sucesso.
+2025-02-07 08:30:00,855 - INFO - A conexão com a internet foi estabelecida com sucesso.
+2025-02-07 08:30:00,855 - INFO - Arquivo .bat criado com sucesso: C:\Users\xxis4\Desktop\gerenciamento-ordens-b3\strategies\A\update.bat
+2025-02-07 08:30:00,855 - INFO - Iniciando a execução do script update.bat da estratégia A.
+2025-02-07 08:30:00,855 - INFO - Execução do script update da estratégia A iniciada com sucesso!
+2025-02-07 08:30:00,855 - INFO - Arquivo .bat criado com sucesso: C:\Users\xxis4\Desktop\gerenciamento-ordens-b3\strategies\B\update.bat
+2025-02-07 08:30:00,855 - INFO - Iniciando a execução do script update.bat da estratégia B.
+2025-02-07 08:30:00,870 - INFO - Execução do script update da estratégia B iniciada com sucesso!

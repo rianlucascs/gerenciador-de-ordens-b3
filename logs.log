@@ -18,3 +18,14 @@
 2025-02-07 08:50:00,361 - INFO - Execução do script open da estratégia A iniciada com sucesso!
 2025-02-07 08:50:00,361 - INFO - Iniciando a execução do script open.bat da estratégia B.
 2025-02-07 08:50:00,376 - INFO - Execução do script open da estratégia B iniciada com sucesso!
+2025-02-07 16:35:00,601 - INFO - Executando tarefas agendadas para o dia: Sexta-feira
+2025-02-07 16:35:00,616 - INFO - Fechando mercado.
+2025-02-07 16:35:00,616 - INFO - Tentativa 1/5 de conectar à internet...
+2025-02-07 16:35:00,663 - INFO - Internet conectada com sucesso.
+2025-02-07 16:35:00,663 - INFO - A conexão com a internet foi estabelecida com sucesso.
+2025-02-07 16:35:00,679 - INFO - Arquivo .bat criado com sucesso: C:\Users\xxis4\Desktop\gerenciamento-ordens-b3\strategies\A\close.bat
+2025-02-07 16:35:00,679 - INFO - Iniciando a execução do script close.bat da estratégia A.
+2025-02-07 16:35:00,726 - INFO - Execução do script close da estratégia A iniciada com sucesso!
+2025-02-07 16:35:00,726 - INFO - Arquivo .bat criado com sucesso: C:\Users\xxis4\Desktop\gerenciamento-ordens-b3\strategies\B\close.bat
+2025-02-07 16:35:00,726 - INFO - Iniciando a execução do script close.bat da estratégia B.
+2025-02-07 16:35:00,726 - INFO - Execução do script close da estratégia B iniciada com sucesso!

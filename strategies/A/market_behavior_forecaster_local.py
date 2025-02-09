@@ -74,4 +74,4 @@ mb["graphs"](
     fontsize_title=10, 
     tick_params_labelsize=2).pio().savefig(join(path, "img_distribuicao_sinais_predicao_apos_o_teste"))
 
-mb["df"]["df"].tail(7).to_csv(join(path, "tabela.csv"))
+mb["df"]["df"].tail(7).to_excel(join(path, "tabela.xlsx"))

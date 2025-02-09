@@ -78,12 +78,6 @@ class BatFileManager:
         return f"""
 @echo off
 
-REM Verifica se o diretório especificado existe
-IF NOT EXIST "{self.path}" (
-    echo O diretório {self.path} nao foi encontrado.
-    exit /b 1
-)
-
 REM Navega para o diretório especificado
 cd /d {self.path}
 

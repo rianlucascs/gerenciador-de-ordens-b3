@@ -14,6 +14,7 @@ update.bat
 open.bat
 close.bat
 after.bat
+clousure.bat
 
 # Arquivo de commit automático 
 auto_commit.sh

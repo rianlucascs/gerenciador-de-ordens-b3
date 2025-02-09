@@ -42,11 +42,6 @@ Este projeto tem como objetivo automatizar o envio de ordens com base nas estrat
     - Copie e cole essa instrução no `CMD`
     - Substitua o caminho do diretório (C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat)
 
-    **Atualização**
-    ```bash
-    schtasks /create /tn "TAREFA UPDATE AM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:30
-    ```
-
     **Abertura**
     ```bash
     schtasks /create /tn "TAREFA OPEN AM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 08:50
@@ -57,10 +52,7 @@ Este projeto tem como objetivo automatizar o envio de ordens com base nas estrat
     schtasks /create /tn "TAREFA CLOSE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 16:35
     ```
 
-    **Finalização**
+    **Atualização**
     ```bash
-    schtasks /create /tn "TAREFA CLOSURE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 17:30
-    ``` 
-
-## Observações
-1. auto_commit não esta disponível.
+    schtasks /create /tn "TAREFA UPDATE PM" /tr "C:\Caminho\Para\Seu\Diretorio\GERENCIAMENTO-ORDENS-B3\run.bat" /sc daily /st 20:30
+    ```

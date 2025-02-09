@@ -77,7 +77,6 @@ class ScheduledTaskExecutor:
         InboxManager("A").to_send()
         InboxManager("B").to_send()
         
-        
         # suspend_computer()
 
 InboxManager("A").to_send()

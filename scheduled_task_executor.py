@@ -80,3 +80,4 @@ class ScheduledTaskExecutor:
         
         # suspend_computer()
 
+InboxManager("A").to_send()

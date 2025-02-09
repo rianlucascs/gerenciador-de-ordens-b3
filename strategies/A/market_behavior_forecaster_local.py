@@ -74,4 +74,6 @@ mb["graphs"](
     fontsize_title=10, 
     tick_params_labelsize=2).pio().savefig(join(path, "img_distribuicao_sinais_predicao_apos_o_teste"))
 
-mb["df"]["df"].tail(7).to_excel(join(path, "tabela.xlsx"))
+html_table = mb["df"]["df"].tail(7).to_html(index=False)
+with open(join(path, "table.html"), "w") as file:
+    file.write(html_table)

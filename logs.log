@@ -49,3 +49,12 @@
 2025-02-10 08:50:05,873 - INFO - Execução do script open da estratégia A iniciada com sucesso!
 2025-02-10 08:50:05,873 - INFO - Iniciando a execução do script open.bat da estratégia B.
 2025-02-10 08:50:05,873 - INFO - Execução do script open da estratégia B iniciada com sucesso!
+2025-02-10 16:35:09,631 - INFO - Executando tarefas agendadas para o dia: Segunda-feira
+2025-02-10 16:35:09,633 - INFO - Fechamento do mercado.
+2025-02-10 16:35:09,634 - INFO - Tentativa 1/3 de conectar à internet...
+2025-02-10 16:35:09,673 - INFO - Internet conectada com sucesso.
+2025-02-10 16:35:09,674 - INFO - A conexão com a internet foi estabelecida com sucesso.
+2025-02-10 16:35:09,676 - INFO - Iniciando a execução do script close.bat da estratégia A.
+2025-02-10 16:35:09,709 - INFO - Execução do script close da estratégia A iniciada com sucesso!
+2025-02-10 16:35:09,709 - INFO - Iniciando a execução do script close.bat da estratégia B.
+2025-02-10 16:35:09,717 - INFO - Execução do script close da estratégia B iniciada com sucesso!

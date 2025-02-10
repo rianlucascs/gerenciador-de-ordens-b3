@@ -40,3 +40,12 @@
 2025-02-07 17:30:00,392 - INFO - Arquivo .bat criado com sucesso: C:\Users\xxis4\Desktop\gerenciamento-ordens-b3\strategies\B\clousure.bat
 2025-02-07 17:30:00,392 - INFO - Iniciando a execução do script clousure.bat da estratégia B.
 2025-02-07 17:30:00,408 - INFO - Execução do script clousure da estratégia B iniciada com sucesso!
+2025-02-10 08:50:05,826 - INFO - Executando tarefas agendadas para o dia: Segunda-feira
+2025-02-10 08:50:05,826 - INFO - Abertura do mercado.
+2025-02-10 08:50:05,826 - INFO - Tentativa 1/3 de conectar à internet...
+2025-02-10 08:50:05,858 - INFO - Internet conectada com sucesso.
+2025-02-10 08:50:05,858 - INFO - A conexão com a internet foi estabelecida com sucesso.
+2025-02-10 08:50:05,858 - INFO - Iniciando a execução do script open.bat da estratégia A.
+2025-02-10 08:50:05,873 - INFO - Execução do script open da estratégia A iniciada com sucesso!
+2025-02-10 08:50:05,873 - INFO - Iniciando a execução do script open.bat da estratégia B.
+2025-02-10 08:50:05,873 - INFO - Execução do script open da estratégia B iniciada com sucesso!

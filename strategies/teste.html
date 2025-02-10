@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório de Resultados</title>
     <style>
-        /* Tipografia e estilos globais */
+        /* Estilos do seu projeto */
         body {
             font-family: 'Open Sans', Arial, sans-serif;
             background-color: #f4f4f9;
@@ -15,42 +15,22 @@
             color: #333;
         }
 
-        /* Container principal */
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+        /* Tabela e estilo de carregamento */
+        #table-container {
+            margin-top: 20px;
         }
 
-        /* Cabeçalho */
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        /* Parágrafos e texto */
-        p {
-            color: #555;
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        /* Tabela */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
 
-        th, td {
+        table, th, td {
             border: 1px solid #ddd;
+        }
+
+        th, td {
             padding: 8px;
             text-align: left;
         }
@@ -58,92 +38,17 @@
         th {
             background-color: #f2f2f2;
         }
-
-        /* Seção de relatórios */
-        .report {
-            margin-top: 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fafafa;
-            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .report h2 {
-            color: #2c3e50;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        .report p {
-            margin-bottom: 10px;
-        }
-
-        .report strong {
-            color: #333;
-        }
-
-        /* Rodapé */
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-            margin-top: 40px;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-        }
-
-        .footer a {
-            color: #2980b9;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer a:hover {
-            color: #3498db;
-        }
-
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .report h2 {
-                font-size: 1.3em;
-            }
-
-            .footer {
-                font-size: 12px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-
         <h1>Relatório de Resultados</h1>
 
-        <!-- Gráficos -->
         <img src="https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/img_resultado_predicao_acumulado.png" alt="Gráfico de Comparação" style="width:100%; max-width:800px;">
-
-        <img src="https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/img_retorno_anual.png" alt="Gráfico do Retorno" style="width:100%; max-width:800px;">
-
-        <h1>Métricas da Estratégia</h1>
-
-        <img src="https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/img_comparacao_metricas.png" alt="Gráfico das Métricas" style="width:100%; max-width:800px;">
         
-        <img src="https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/img_distribuicao_sinais_predicao_treino.png" alt="Distribuição dos Sinais da Predição Treino" style="width:100%; max-width:250px;">
-        <img src="https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/img_distribuicao_sinais_predicao_teste.png" alt="Distribuição dos Sinais da Predição Teste" style="width:100%; max-width:250px;">
-        <img src="https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/img_distribuicao_sinais_predicao_apos_o_teste.png" alt="Distribuição dos Sinais da Predição Apos o Teste" style="width:100%; max-width:250px;">
-
+        <!-- Adicionando o conteúdo da tabela -->
         <h2>Tabela de Dados</h2>
-        <div id="tabela-container"></div>
+        <div id="table-container">Carregando a tabela...</div>
 
         <p>Para mais detalhes, consulte o relatório completo em nosso sistema.</p>
 
@@ -155,46 +60,18 @@
     </div>
 
     <script>
-        // URL do arquivo CSV
-        const csvUrl = 'https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/tabela.csv';
-
-        // Função para carregar e exibir a tabela
-        function carregarTabela() {
-            fetch(csvUrl)
-                .then(response => response.text())
-                .then(data => {
-                    const linhas = data.split('\n');
-                    const cabecalho = linhas[0].split(',');
-                    let tabelaHTML = '<table>';
-
-                    // Cabeçalho da tabela
-                    tabelaHTML += '<tr>';
-                    cabecalho.forEach(cabecalhoItem => {
-                        tabelaHTML += `<th>${cabecalhoItem}</th>`;
-                    });
-                    tabelaHTML += '</tr>';
-
-                    // Corpo da tabela
-                    for (let i = 1; i < linhas.length; i++) {
-                        const valores = linhas[i].split(',');
-                        tabelaHTML += '<tr>';
-                        valores.forEach(valor => {
-                            tabelaHTML += `<td>${valor}</td>`;
-                        });
-                        tabelaHTML += '</tr>';
-                    }
-
-                    tabelaHTML += '</table>';
-                    document.getElementById('tabela-container').innerHTML = tabelaHTML;
-                })
-                .catch(error => {
-                    console.error('Erro ao carregar o arquivo CSV:', error);
-                    document.getElementById('tabela-container').innerHTML = '<p>Erro ao carregar a tabela.</p>';
-                });
-        }
-
-        // Carregar a tabela ao carregar a página
-        window.onload = carregarTabela;
+        // Função para carregar o conteúdo HTML da tabela
+        fetch("https://raw.githubusercontent.com/rianlucascs/gerenciador-de-ordens-b3/master/strategies/A/table.html")
+            .then(response => response.text())
+            .then(html => {
+                // Coloca o HTML carregado dentro do div #table-container
+                document.getElementById('table-container').innerHTML = html;
+            })
+            .catch(error => {
+                // Em caso de erro, exibe uma mensagem de erro
+                document.getElementById('table-container').innerHTML = "Falha ao carregar a tabela.";
+                console.error("Erro ao carregar o arquivo da tabela: ", error);
+            });
     </script>
 </body>
 </html>

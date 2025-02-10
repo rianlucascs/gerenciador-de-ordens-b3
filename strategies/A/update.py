@@ -42,7 +42,10 @@ with open(join(path, "previsoes", f"forecast_{date.today()}.json"), "w", encodin
     json.dump(data, arquivo, indent=4, ensure_ascii=False)
 
 # Salvando tabela
-mb["df"]["df"].tail(20).to_excel(join(path, 'table.xlsx'), index=False)
+df = mb["df"]["df"].reset_index()
+df["Date"] = df["Date"].astype(str)
+df["date_target"] = df["date_target"].astype(str)
+df = df.to_excel(join(path, 'table.xlsx'), index=True)
 
 mb["graphs"](
     mb["df"]["df"], 
